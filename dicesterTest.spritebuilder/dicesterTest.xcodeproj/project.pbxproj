@@ -95,6 +95,8 @@
 		BA5AF1371A96C929006692D9 /* Parent.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF1361A96C929006692D9 /* Parent.m */; };
 		BA5AF13A1A96C96C006692D9 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF1391A96C96C006692D9 /* Dice.m */; };
 		BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF13C1A96C9FC006692D9 /* Rand.m */; };
+		BA5E34771A983DC700C6B035 /* Rand1.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5E34761A983DC700C6B035 /* Rand1.m */; };
+		BA5E347B1A983E7C00C6B035 /* Rand2.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5E347A1A983E7C00C6B035 /* Rand2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +239,10 @@
 		BA5AF1391A96C96C006692D9 /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
 		BA5AF13B1A96C9FC006692D9 /* Rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rand.h; sourceTree = "<group>"; };
 		BA5AF13C1A96C9FC006692D9 /* Rand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand.m; sourceTree = "<group>"; };
+		BA5E34751A983DC700C6B035 /* Rand1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rand1.h; sourceTree = "<group>"; };
+		BA5E34761A983DC700C6B035 /* Rand1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand1.m; sourceTree = "<group>"; };
+		BA5E34791A983E7C00C6B035 /* Rand2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rand2.h; sourceTree = "<group>"; };
+		BA5E347A1A983E7C00C6B035 /* Rand2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand2.m; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -475,6 +481,10 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				BA5E34791A983E7C00C6B035 /* Rand2.h */,
+				BA5E347A1A983E7C00C6B035 /* Rand2.m */,
+				BA5E34751A983DC700C6B035 /* Rand1.h */,
+				BA5E34761A983DC700C6B035 /* Rand1.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -877,9 +887,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA5AF13A1A96C96C006692D9 /* Dice.m in Sources */,
+				BA5E347B1A983E7C00C6B035 /* Rand2.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				BA5AF1371A96C929006692D9 /* Parent.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
+				BA5E34771A983DC700C6B035 /* Rand1.m in Sources */,
 				BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);

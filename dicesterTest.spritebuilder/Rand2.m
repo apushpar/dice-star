@@ -1,14 +1,14 @@
 //
-//  Rand.m
+//  Rand2.m
 //  dicesterTest
 //
-//  Created by Akshay Pushparaja on 2/19/15.
+//  Created by Akshay Pushparaja on 2/20/15.
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
-#import "Rand.h"
+#import "Rand2.h"
 
-@implementation Rand
+@implementation Rand2
 
 -(void)d1 {
     CCLOG(@"d1 clicked");
@@ -33,4 +33,6 @@
 -(void)d6 {
     CCLOG(@"d6 clicked");
 }
+
+
 @end
