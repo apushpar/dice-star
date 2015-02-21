@@ -9,32 +9,18 @@
     Parent *_parent;
     CCLabelTTF *_timeLabel;
     CCLabelTTF *_scoreLabel;
-    NSArray *_tiles;
+    NSMutableArray *_tiles;
+    int timerValue;
+    int manageDelta;
 }
 
 -(void) didLoadFromCCB {
     self.userInteractionEnabled = TRUE;
-    
-/*    CCNode* randomTile = [CCBReader load:@"Rand"];
-    randomTile.position = ccp(0, 0);
-    
-    CCNode *oneDice = [CCBReader load:@"Dice"];
-    oneDice.position = ccp(10,10);
-    [self addChild:randomTile];
-    
-    randomTile.position = ccp(0, 240);
-    [self addChild:randomTile];
- */
-    //CCNode *rand = [CCBReader load:@"Rand"];
-    //CCNode *rand1 = [CCBReader load:@"Rand1"];
-    //CCNode *rand2 = [CCBReader load:@"Rand2"];
- 
-    //_tiles = @[rand, rand1, rand2];
-    //CCNode *rand = [[NSClassFromString(@"Rand") alloc] init];
-    //Class rand1 = NSClassFromString(@"Rand1");
-    //Class rand2 = NSClassFromString(@"Rand2");
-    //_tiles = @[rand, rand1, rand2];
-    for (int i=0; i<3; i++) {
+    _tiles = [[NSMutableArray alloc] init];
+    timerValue = 60;
+    manageDelta = 200;
+
+    for (int i=0; i<45; i++) {
         int j = arc4random_uniform(3);
         CCNode* randomTile;
         if (j==0) {
@@ -47,11 +33,30 @@
         
         randomTile.position = ccp(0, i*240);
         [self addChild:randomTile];
+        [_tiles addObject:randomTile];
+        [self schedule:@selector(step) interval:1.0f];
     }
 }
 
-/*-(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
+- (void)step
+{
     
-}*/
+    if (timerValue == 30) {
+        NSLog(@"30 seconds");
+        [_tiles removeAllObjects];
+        [self unschedule:@selector(step)];
+    }else{
+        timerValue--;
+        _timeLabel.string = [NSString stringWithFormat:@"%d", timerValue];
+    }
+}
+
+-(void)update:(CCTime)delta{
+    
+    for (CCNode *tile in _tiles) {
+    
+        tile.position = ccp(tile.position.x, tile.position.y - (manageDelta*delta));
+    }
+}
 
 @end
