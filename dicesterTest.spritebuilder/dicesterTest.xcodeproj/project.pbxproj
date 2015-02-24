@@ -97,6 +97,7 @@
 		BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF13C1A96C9FC006692D9 /* Rand.m */; };
 		BA5E34771A983DC700C6B035 /* Rand1.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5E34761A983DC700C6B035 /* Rand1.m */; };
 		BA5E347B1A983E7C00C6B035 /* Rand2.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5E347A1A983E7C00C6B035 /* Rand2.m */; };
+		BA614BF21A9D0A43000C771D /* DKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA614BF11A9D0A43000C771D /* DKQueue.m */; };
 		BAD90CC41A9C06860074AF3B /* DiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD90CC31A9C06860074AF3B /* DiceManager.m */; };
 /* End PBXBuildFile section */
 
@@ -244,6 +245,8 @@
 		BA5E34761A983DC700C6B035 /* Rand1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand1.m; sourceTree = "<group>"; };
 		BA5E34791A983E7C00C6B035 /* Rand2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rand2.h; sourceTree = "<group>"; };
 		BA5E347A1A983E7C00C6B035 /* Rand2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand2.m; sourceTree = "<group>"; };
+		BA614BF01A9D0A43000C771D /* DKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKQueue.h; sourceTree = "<group>"; };
+		BA614BF11A9D0A43000C771D /* DKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKQueue.m; sourceTree = "<group>"; };
 		BAD90CC21A9C06860074AF3B /* DiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiceManager.h; sourceTree = "<group>"; };
 		BAD90CC31A9C06860074AF3B /* DiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiceManager.m; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
@@ -484,6 +487,8 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				BA614BF01A9D0A43000C771D /* DKQueue.h */,
+				BA614BF11A9D0A43000C771D /* DKQueue.m */,
 				BAD90CC21A9C06860074AF3B /* DiceManager.h */,
 				BAD90CC31A9C06860074AF3B /* DiceManager.m */,
 				BA5E34791A983E7C00C6B035 /* Rand2.h */,
@@ -895,6 +900,7 @@
 				BA5E347B1A983E7C00C6B035 /* Rand2.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				BA5AF1371A96C929006692D9 /* Parent.m in Sources */,
+				BA614BF21A9D0A43000C771D /* DKQueue.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				BA5E34771A983DC700C6B035 /* Rand1.m in Sources */,
 				BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */,

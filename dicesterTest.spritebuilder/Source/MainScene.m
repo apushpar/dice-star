@@ -3,8 +3,9 @@
 #import "Rand.h"
 #import "Rand1.h"
 #import "Rand2.h"
-#import "Dice.h"
+//#import "Dice.h"
 #import "DiceManager.h"
+#import "DKQueue.h"
 
 @implementation MainScene{
     Parent *_parent;
@@ -13,14 +14,35 @@
     NSMutableArray *_tiles;
     int timerValue;
     int manageDelta;
+    NSMutableArray *gameQueue;
+    int score;
 }
 
 -(void) didLoadFromCCB {
     self.userInteractionEnabled = TRUE;
     _tiles = [[NSMutableArray alloc] init];
-    timerValue = 60;
+    timerValue = 30;
     manageDelta = 100;
+    score = 0;
+    /*[gameQueue enqueue:@0];
+    [gameQueue enqueue:@1];
+    [gameQueue enqueue:@2];
+    [gameQueue enqueue:@3];
+    [gameQueue enqueue:@4];
+    [gameQueue enqueue:@5];
+    [gameQueue enqueue:[NSNumber numberWithInt:0]];
+    [gameQueue enqueue:[NSNumber numberWithInt:1]];
+    [gameQueue enqueue:[NSNumber numberWithInt:2]];
+    [gameQueue enqueue:[NSNumber numberWithInt:3]];
+    [gameQueue enqueue:[NSNumber numberWithInt:4]];
+    [gameQueue enqueue:[NSNumber numberWithInt:5]];*/
+    gameQueue = [[NSMutableArray alloc] initWithObjects:@0,@1,@2,@3,@4,@5, nil];
 
+    for (int j=0; j<[gameQueue count]; j++) {
+        NSLog(@"TESTAPPAPAPAPPA");
+        NSLog(@"%@",[gameQueue objectAtIndex:j]);
+    }
+    
     for (int i=0; i<20; i++) {
         int j = arc4random_uniform(3);
         CCNode* randomTile;
@@ -42,7 +64,7 @@
 - (void)step
 {
     
-    if (timerValue == 30) {
+    if (timerValue == 0) {
         NSLog(@"30 seconds");
         [_tiles removeAllObjects];
         [self unschedule:@selector(step)];
@@ -61,35 +83,24 @@
     
     DiceManager *myDice = [DiceManager sharedDice];
     
-    /*if ([[myDice.diceArray objectAtIndex:0]  isEqual: @1]) {
-        NSLog(@"dice 1 is set");
-        [myDice.diceArray insertObject:@0 atIndex:0];
-    }
-    if ([[myDice.diceArray objectAtIndex:1]  isEqual: @1]) {
-        NSLog(@"dice 2 is set");
-        [myDice.diceArray insertObject:@0 atIndex:1];
-    }
-    if ([[myDice.diceArray objectAtIndex:2]  isEqual: @1]) {
-        NSLog(@"dice 3 is set");
-        [myDice.diceArray insertObject:@0 atIndex:2];
-    }
-    if ([[myDice.diceArray objectAtIndex:3]  isEqual: @1]) {
-        NSLog(@"dice 4 is set");
-        [myDice.diceArray insertObject:@0 atIndex:3];
-    }
-    if ([[myDice.diceArray objectAtIndex:4]  isEqual: @1]) {
-        NSLog(@"dice 5 is set");
-        [myDice.diceArray insertObject:@0 atIndex:4];
-    }
-    if ([[myDice.diceArray objectAtIndex:5]  isEqual: @1]) {
-        NSLog(@"dice 6 is set");
-        [myDice.diceArray insertObject:@0 atIndex:5];
-    }
-    */
-    //NSLog(@"%lu",(unsigned long)[myDice.diceArray count]);
+    
     for (int i=0; i<6; i++) {
-        if ([[myDice.diceArray objectAtIndex:i] isEqual:@1]) {
+        if ([[myDice.diceArray objectAtIndex:i] isEqual:[NSNumber numberWithInt:1]]) {
             NSLog(@"dice %d is set", i+1);
+            if ([[gameQueue objectAtIndex:0] isEqual:[NSNumber numberWithInt:i]]) {
+                NSLog(@"correct dice face");
+//                NSNumber* temp = [NSNumber numberWithInt:i];
+                [gameQueue removeObjectAtIndex:0];
+                NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:0]);
+                [gameQueue addObject:[NSNumber numberWithInt:i]];
+                NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:[gameQueue count]-1]);
+                if (i == 5) {
+                    score++;
+                    _scoreLabel.string = [NSString stringWithFormat:@"%d", score];
+                }
+            }else{
+                NSLog(@"INCORRECT dice face");
+            }
             [myDice.diceArray replaceObjectAtIndex:i withObject:@0];
         }
     }
