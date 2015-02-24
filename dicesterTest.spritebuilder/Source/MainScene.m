@@ -16,6 +16,8 @@
     int manageDelta;
     NSMutableArray *gameQueue;
     int score;
+    int setRestart;
+    CCButton *_restartButton;
 }
 
 -(void) didLoadFromCCB {
@@ -24,6 +26,7 @@
     timerValue = 30;
     manageDelta = 100;
     score = 0;
+    int setRestart = 0;
     /*[gameQueue enqueue:@0];
     [gameQueue enqueue:@1];
     [gameQueue enqueue:@2];
@@ -68,9 +71,16 @@
         NSLog(@"30 seconds");
         [_tiles removeAllObjects];
         [self unschedule:@selector(step)];
+        _restartButton.visible = TRUE;
     }else{
         timerValue--;
         _timeLabel.string = [NSString stringWithFormat:@"%d", timerValue];
+    }
+    
+    if (setRestart == 1) {
+        NSLog(@"Restart game command sent");
+        [_tiles removeAllObjects];
+        [self unschedule:@selector(step)];
     }
 }
 
@@ -83,7 +93,7 @@
     
     DiceManager *myDice = [DiceManager sharedDice];
     
-    
+    if (setRestart == 0) {
     for (int i=0; i<6; i++) {
         if ([[myDice.diceArray objectAtIndex:i] isEqual:[NSNumber numberWithInt:1]]) {
             NSLog(@"dice %d is set", i+1);
@@ -100,10 +110,18 @@
                 }
             }else{
                 NSLog(@"INCORRECT dice face");
+                setRestart = 1;
+                _restartButton.visible = TRUE;
             }
             [myDice.diceArray replaceObjectAtIndex:i withObject:@0];
         }
     }
+    }
+}
+
+- (void)restart {
+    CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 @end
