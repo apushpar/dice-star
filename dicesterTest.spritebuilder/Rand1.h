@@ -10,4 +10,5 @@
 
 @interface Rand1 : CCNode
 
+
 @end

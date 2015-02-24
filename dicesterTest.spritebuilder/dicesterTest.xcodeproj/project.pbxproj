@@ -97,6 +97,7 @@
 		BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF13C1A96C9FC006692D9 /* Rand.m */; };
 		BA5E34771A983DC700C6B035 /* Rand1.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5E34761A983DC700C6B035 /* Rand1.m */; };
 		BA5E347B1A983E7C00C6B035 /* Rand2.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5E347A1A983E7C00C6B035 /* Rand2.m */; };
+		BAD90CC41A9C06860074AF3B /* DiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD90CC31A9C06860074AF3B /* DiceManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +244,8 @@
 		BA5E34761A983DC700C6B035 /* Rand1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand1.m; sourceTree = "<group>"; };
 		BA5E34791A983E7C00C6B035 /* Rand2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rand2.h; sourceTree = "<group>"; };
 		BA5E347A1A983E7C00C6B035 /* Rand2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand2.m; sourceTree = "<group>"; };
+		BAD90CC21A9C06860074AF3B /* DiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiceManager.h; sourceTree = "<group>"; };
+		BAD90CC31A9C06860074AF3B /* DiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiceManager.m; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -481,6 +484,8 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				BAD90CC21A9C06860074AF3B /* DiceManager.h */,
+				BAD90CC31A9C06860074AF3B /* DiceManager.m */,
 				BA5E34791A983E7C00C6B035 /* Rand2.h */,
 				BA5E347A1A983E7C00C6B035 /* Rand2.m */,
 				BA5E34751A983DC700C6B035 /* Rand1.h */,
@@ -894,6 +899,7 @@
 				BA5E34771A983DC700C6B035 /* Rand1.m in Sources */,
 				BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				BAD90CC41A9C06860074AF3B /* DiceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
