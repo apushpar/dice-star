@@ -18,33 +18,18 @@
     int score;
     int setRestart;
     CCButton *_restartButton;
+    NSMutableArray *_offScreenTile;
 }
 
 -(void) didLoadFromCCB {
     self.userInteractionEnabled = TRUE;
     _tiles = [[NSMutableArray alloc] init];
-    timerValue = 30;
+    timerValue = 120;
     manageDelta = 100;
     score = 0;
     int setRestart = 0;
-    /*[gameQueue enqueue:@0];
-    [gameQueue enqueue:@1];
-    [gameQueue enqueue:@2];
-    [gameQueue enqueue:@3];
-    [gameQueue enqueue:@4];
-    [gameQueue enqueue:@5];
-    [gameQueue enqueue:[NSNumber numberWithInt:0]];
-    [gameQueue enqueue:[NSNumber numberWithInt:1]];
-    [gameQueue enqueue:[NSNumber numberWithInt:2]];
-    [gameQueue enqueue:[NSNumber numberWithInt:3]];
-    [gameQueue enqueue:[NSNumber numberWithInt:4]];
-    [gameQueue enqueue:[NSNumber numberWithInt:5]];*/
     gameQueue = [[NSMutableArray alloc] initWithObjects:@0,@1,@2,@3,@4,@5, nil];
-
-    for (int j=0; j<[gameQueue count]; j++) {
-        NSLog(@"TESTAPPAPAPAPPA");
-        NSLog(@"%@",[gameQueue objectAtIndex:j]);
-    }
+    _offScreenTile = nil;
     
     for (int i=0; i<20; i++) {
         int j = arc4random_uniform(3);
@@ -57,7 +42,7 @@
             randomTile = [CCBReader load:@"Rand2"];
         }
         
-        randomTile.position = ccp(0, i*240);
+        randomTile.position = ccp(0, (i+2)*240);
         [self addChild:randomTile];
         [_tiles addObject:randomTile];
         [self schedule:@selector(step) interval:1.0f];
@@ -72,9 +57,14 @@
         [_tiles removeAllObjects];
         [self unschedule:@selector(step)];
         _restartButton.visible = TRUE;
-    }else{
+    }
+    else{
         timerValue--;
         _timeLabel.string = [NSString stringWithFormat:@"%d", timerValue];
+    }
+    
+    if (timerValue % 5 == 0){
+        manageDelta += 10;
     }
     
     if (setRestart == 1) {
@@ -89,7 +79,18 @@
     for (CCNode *tile in _tiles) {
     
         tile.position = ccp(tile.position.x, tile.position.y - (manageDelta*delta));
+        if (tile.position.y < -240) {
+                tile.position = ccp(tile.position.x, 4560);
+        }
+        //NSLog(@"x value: %f",tile.position.y);
     }
+    
+//    for (CCNode *toRemoveTile in _offScreenTile) {
+//        [toRemoveTile removeFromParent];
+//        [_tiles removeObject:toRemoveTile];
+//        NSLog(@"TILE REMOVED");
+//    }
+
     
     DiceManager *myDice = [DiceManager sharedDice];
     
