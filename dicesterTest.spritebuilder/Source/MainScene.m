@@ -23,8 +23,9 @@
 
 -(void) didLoadFromCCB {
     self.userInteractionEnabled = TRUE;
+    _restartButton.visible = FALSE;
     _tiles = [[NSMutableArray alloc] init];
-    timerValue = 120;
+    timerValue = 0;
     manageDelta = 100;
     score = 0;
     int setRestart = 0;
@@ -52,7 +53,7 @@
 - (void)step
 {
     
-    if (timerValue == 0) {
+    /*if (timerValue == 0) {
         NSLog(@"30 seconds");
         [_tiles removeAllObjects];
         [self unschedule:@selector(step)];
@@ -62,7 +63,9 @@
         timerValue--;
         _timeLabel.string = [NSString stringWithFormat:@"%d", timerValue];
     }
-    
+    */
+    timerValue++;
+    _timeLabel.string = [NSString stringWithFormat:@"%d", timerValue];
     if (timerValue % 5 == 0){
         manageDelta += 10;
     }
