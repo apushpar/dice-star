@@ -7,8 +7,8 @@ Week 0:
 
 Week 1:
 
-1) Implement Random Level Generator
-2) Implement character Animation
+1) Implement Random Level Generator -> Done
+2) Implement character Animation -> Done (Jump and Shooting implemented)
 
 Week 2:
 
