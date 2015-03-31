@@ -118,7 +118,8 @@
                 setRestart = 1;
                 _restartButton.visible = TRUE;
                 CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
-                [[CCDirector sharedDirector] replaceScene:scene];
+                CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];
+                [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 
             }
             [myDice.diceArray replaceObjectAtIndex:i withObject:@0];

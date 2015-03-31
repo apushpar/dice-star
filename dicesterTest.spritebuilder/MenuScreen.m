@@ -19,7 +19,8 @@
 
 - (void) play {
     CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
+    CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionUp duration:0.2];
+    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
     //NSLog(@"PLay button clicked");
 }
 

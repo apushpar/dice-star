@@ -459,11 +459,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>258</real>
-							<real>543</real>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<real>0.19374999403953552</real>
+							<real>0.56562501192092896</real>
+							<integer>3</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>

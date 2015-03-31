@@ -12,8 +12,9 @@ Week 1:
 
 Week 2:
 
-1) Implement collision detection
-2) Implement firing/shooting mechanics
+1) Implement collision detection [done]
+2) Implement firing/shooting mechanics [done]
+Comment: Game is shaping up well.
 
 Week 3:
 
