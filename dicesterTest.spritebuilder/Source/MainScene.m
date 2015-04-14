@@ -6,6 +6,7 @@
 //#import "Dice.h"
 #import "DiceManager.h"
 #import "DKQueue.h"
+#import "BlinkingFaceOne.h"
 
 @implementation MainScene{
     Parent *_parent;
@@ -19,6 +20,7 @@
     int setRestart;
     CCButton *_restartButton;
     NSMutableArray *_offScreenTile;
+    CCSprite *apTest;
 }
 
 -(void) didLoadFromCCB {
@@ -30,6 +32,28 @@
     score = 0;
     int setRestart = 0;
     gameQueue = [[NSMutableArray alloc] initWithObjects:@0,@1,@2,@3,@4,@5, nil];
+    NSUInteger count = [gameQueue count];
+    /*for (NSUInteger i = 0; i < count; ++i) {
+        int nElements = count - i;
+        int n = (arc4random() % nElements) + i;
+        [gameQueue exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }*/
+    //_scoreLabel.position = ccp(180,280);
+    /*for (int i = 0; i < count; ++i) {
+        NSLog(@"%@",[gameQueue objectAtIndex:i]);
+    }*/
+    /*CCNode* randomBlink = [CCBReader load:@"BlinkingFaceOne"];
+    randomBlink.positionType = CCPositionTypeMake(CCPositionUnitNormalized, CCPositionUnitNormalized, CCPositionReferenceCornerTopRight);
+    randomBlink.position = ccp(0.12,0.36);
+    randomBlink.scale = 0.75;
+    
+    [self addChild:randomBlink];*/
+    apTest = [CCSprite spriteWithImageNamed:@"diceAsset/dieRed1.png"];
+    apTest.anchorPoint = ccp(0,0);
+    apTest.position = ccp(0,0);
+    apTest.opacity = 0.5;
+    [self addChild:apTest];
+    
     _offScreenTile = nil;
     
     for (int i=0; i<20; i++) {
@@ -99,32 +123,36 @@
     DiceManager *myDice = [DiceManager sharedDice];
     
     if (setRestart == 0) {
-    for (int i=0; i<6; i++) {
-        if ([[myDice.diceArray objectAtIndex:i] isEqual:[NSNumber numberWithInt:1]]) {
-            NSLog(@"dice %d is set", i+1);
-            if ([[gameQueue objectAtIndex:0] isEqual:[NSNumber numberWithInt:i]]) {
-                NSLog(@"correct dice face");
-//                NSNumber* temp = [NSNumber numberWithInt:i];
-                [gameQueue removeObjectAtIndex:0];
-                NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:0]);
-                [gameQueue addObject:[NSNumber numberWithInt:i]];
-                NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:[gameQueue count]-1]);
-                if (i == 5) {
-                    score++;
-                    _scoreLabel.string = [NSString stringWithFormat:@"%d", score];
-                }
-            }else{
-                NSLog(@"INCORRECT dice face");
-                setRestart = 1;
-                _restartButton.visible = TRUE;
-                CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
-                CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];
-                [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
+        for (int i=0; i<6; i++) {
+            if ([[myDice.diceArray objectAtIndex:i] isEqual:[NSNumber numberWithInt:1]]) {
+                NSLog(@"dice %d is set", i+1);
+                if ([[gameQueue objectAtIndex:0] isEqual:[NSNumber numberWithInt:i]]) {
+                    NSLog(@"correct dice face");
+                    if (i == 0) {
+                        apTest.opacity = 1;
+                    }
+    //                NSNumber* temp = [NSNumber numberWithInt:i];
+                    [gameQueue removeObjectAtIndex:0];
+                    NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:0]);
+                    [gameQueue addObject:[NSNumber numberWithInt:i]];
+                    NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:[gameQueue count]-1]);
+                    if (i == 5) {
+                        score++;
+                        _scoreLabel.string = [NSString stringWithFormat:@"%d", score];
+                    }
+                }else{
+                    NSLog(@"INCORRECT dice face");
+                    setRestart = 1;
+                    _restartButton.visible = TRUE;
+                    [myDice SetHighScore:score];
+                    CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
+                    CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];
+                    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 
+                }
+                [myDice.diceArray replaceObjectAtIndex:i withObject:@0];
             }
-            [myDice.diceArray replaceObjectAtIndex:i withObject:@0];
         }
-    }
     }
 }
 

@@ -27,6 +27,7 @@
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
+#import "DiceManager.h"
 
 @implementation AppController
 
@@ -59,6 +60,7 @@
 
 - (CCScene*) startScene
 {
+    [[DiceManager sharedDice] FillSettingsOnStartup];
     return [CCBReader loadAsScene:@"MenuScreen"];
 }
 

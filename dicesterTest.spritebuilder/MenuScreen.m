@@ -7,14 +7,21 @@
 //
 
 #import "MenuScreen.h"
+#import "DiceManager.h"
 
 @implementation MenuScreen {
     CCButton *_playButton;
+    CCSprite *_spriteThree;
+    CCLabelTTF *_highScoreLabel;
 }
 
 -(void) didLoadFromCCB {
     self.userInteractionEnabled = TRUE;
-    _playButton.visible = TRUE;
+    //_playButton.visible = TRUE;
+    //[_spriteThree setSpriteFrame:[CCSpriteFrame frameWithImageNamed:@"dieRed3_less.png"]];
+    DiceManager *dice = [DiceManager sharedDice];
+    [_highScoreLabel setString:[NSString stringWithFormat:@"HighScore: %d",[dice GetHighScore]]];
+    
 }
 
 - (void) play {

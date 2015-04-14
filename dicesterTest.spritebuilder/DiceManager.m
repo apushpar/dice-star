@@ -8,7 +8,11 @@
 
 #import "DiceManager.h"
 
-@implementation DiceManager
+#define kHighScoreKeyName @"HighScoreKey"
+
+@implementation DiceManager {
+    int _highScore;
+}
 
 @synthesize dice1State;
 @synthesize dice2State;
@@ -38,6 +42,27 @@
         diceArray =  [[NSMutableArray alloc] initWithObjects:@0,@0,@0,@0,@0,@0, nil];
     }
     return self;
+}
+
+-(int) GetHighScore{
+    return _highScore;
+}
+
+-(void)SetHighScore:(int)Score{
+    if(Score > _highScore) {
+        _highScore = Score;
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        [def setObject:[NSNumber numberWithInt:_highScore] forKey:kHighScoreKeyName];
+        [def synchronize];
+    }
+}
+
+-(void) FillSettingsOnStartup {
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger score = [[def objectForKey:kHighScoreKeyName] integerValue];
+    
+    _highScore = score;
 }
 
 @end

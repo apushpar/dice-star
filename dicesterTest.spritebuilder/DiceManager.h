@@ -28,4 +28,8 @@
 
 +(id) sharedDice;
 
+-(int) GetHighScore;
+-(void) SetHighScore:(int) Score;
+-(void) FillSettingsOnStartup;
+
 @end

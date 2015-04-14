@@ -98,6 +98,7 @@
 		BA5E34771A983DC700C6B035 /* Rand1.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5E34761A983DC700C6B035 /* Rand1.m */; };
 		BA5E347B1A983E7C00C6B035 /* Rand2.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5E347A1A983E7C00C6B035 /* Rand2.m */; };
 		BA614BF21A9D0A43000C771D /* DKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA614BF11A9D0A43000C771D /* DKQueue.m */; };
+		BA93649C1ACF50AA005B7AD9 /* BlinkingFaceOne.m in Sources */ = {isa = PBXBuildFile; fileRef = BA93649B1ACF50AA005B7AD9 /* BlinkingFaceOne.m */; };
 		BAA423251ABD0203004724CD /* MenuScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA423241ABD0203004724CD /* MenuScreen.m */; };
 		BAD90CC41A9C06860074AF3B /* DiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD90CC31A9C06860074AF3B /* DiceManager.m */; };
 /* End PBXBuildFile section */
@@ -248,6 +249,8 @@
 		BA5E347A1A983E7C00C6B035 /* Rand2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rand2.m; sourceTree = "<group>"; };
 		BA614BF01A9D0A43000C771D /* DKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKQueue.h; sourceTree = "<group>"; };
 		BA614BF11A9D0A43000C771D /* DKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKQueue.m; sourceTree = "<group>"; };
+		BA93649A1ACF50AA005B7AD9 /* BlinkingFaceOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlinkingFaceOne.h; sourceTree = "<group>"; };
+		BA93649B1ACF50AA005B7AD9 /* BlinkingFaceOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlinkingFaceOne.m; sourceTree = "<group>"; };
 		BAA423231ABD0203004724CD /* MenuScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScreen.h; sourceTree = "<group>"; };
 		BAA423241ABD0203004724CD /* MenuScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScreen.m; sourceTree = "<group>"; };
 		BAD90CC21A9C06860074AF3B /* DiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiceManager.h; sourceTree = "<group>"; };
@@ -481,6 +484,8 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BA93649A1ACF50AA005B7AD9 /* BlinkingFaceOne.h */,
+				BA93649B1ACF50AA005B7AD9 /* BlinkingFaceOne.m */,
 				BA5AF1351A96C929006692D9 /* Parent.h */,
 				BA5AF1381A96C96C006692D9 /* Dice.h */,
 				BA5AF1391A96C96C006692D9 /* Dice.m */,
@@ -908,6 +913,7 @@
 				BA5AF1371A96C929006692D9 /* Parent.m in Sources */,
 				BA614BF21A9D0A43000C771D /* DKQueue.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
+				BA93649C1ACF50AA005B7AD9 /* BlinkingFaceOne.m in Sources */,
 				BA5E34771A983DC700C6B035 /* Rand1.m in Sources */,
 				BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
