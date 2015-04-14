@@ -16,11 +16,11 @@
     self.userInteractionEnabled = TRUE;
 }
 
--(void) exitgame {
-    CCLOG(@"exit");
-/*    CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
+-(void) exit {
+    //CCLOG(@"Akshay");
+    CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
     CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];
-    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];*/
+    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 }
 
 @end

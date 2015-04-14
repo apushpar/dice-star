@@ -721,7 +721,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>158</real>
+							<real>148</real>
 							<real>454</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -759,7 +759,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Odd Maddness</string>
+							<string>Odd Ball</string>
 							<false/>
 						</array>
 					</dict>
@@ -928,7 +928,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>144</real>
+							<real>154</real>
 							<real>426</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1135,7 +1135,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>146</real>
+							<real>156</real>
 							<real>210</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1461,7 +1461,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>137</real>
+							<real>157</real>
 							<real>273</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1668,7 +1668,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>142</real>
+							<real>152</real>
 							<real>241</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2201,7 +2201,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>139</real>
+							<real>159</real>
 							<real>75</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2239,7 +2239,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Prime Problem</string>
+							<string>Prime Concern</string>
 							<false/>
 						</array>
 					</dict>
@@ -2908,8 +2908,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -3561,7 +3559,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>MissionSelector</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
