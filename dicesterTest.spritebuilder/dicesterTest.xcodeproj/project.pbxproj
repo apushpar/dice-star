@@ -100,6 +100,7 @@
 		BA614BF21A9D0A43000C771D /* DKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA614BF11A9D0A43000C771D /* DKQueue.m */; };
 		BA93649C1ACF50AA005B7AD9 /* BlinkingFaceOne.m in Sources */ = {isa = PBXBuildFile; fileRef = BA93649B1ACF50AA005B7AD9 /* BlinkingFaceOne.m */; };
 		BAA423251ABD0203004724CD /* MenuScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA423241ABD0203004724CD /* MenuScreen.m */; };
+		BABF10CA1ADDBD1B00E3638E /* MissionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = BABF10C91ADDBD1B00E3638E /* MissionSelector.m */; };
 		BAD90CC41A9C06860074AF3B /* DiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD90CC31A9C06860074AF3B /* DiceManager.m */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +254,8 @@
 		BA93649B1ACF50AA005B7AD9 /* BlinkingFaceOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlinkingFaceOne.m; sourceTree = "<group>"; };
 		BAA423231ABD0203004724CD /* MenuScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScreen.h; sourceTree = "<group>"; };
 		BAA423241ABD0203004724CD /* MenuScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScreen.m; sourceTree = "<group>"; };
+		BABF10C81ADDBD1B00E3638E /* MissionSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionSelector.h; sourceTree = "<group>"; };
+		BABF10C91ADDBD1B00E3638E /* MissionSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionSelector.m; sourceTree = "<group>"; };
 		BAD90CC21A9C06860074AF3B /* DiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiceManager.h; sourceTree = "<group>"; };
 		BAD90CC31A9C06860074AF3B /* DiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiceManager.m; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				BAA423231ABD0203004724CD /* MenuScreen.h */,
+				BABF10C81ADDBD1B00E3638E /* MissionSelector.h */,
+				BABF10C91ADDBD1B00E3638E /* MissionSelector.m */,
 				BAA423241ABD0203004724CD /* MenuScreen.m */,
 				B7378993180767190076A88C /* MainScene.m */,
 				BA614BF01A9D0A43000C771D /* DKQueue.h */,
@@ -916,6 +921,7 @@
 				BA93649C1ACF50AA005B7AD9 /* BlinkingFaceOne.m in Sources */,
 				BA5E34771A983DC700C6B035 /* Rand1.m in Sources */,
 				BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */,
+				BABF10CA1ADDBD1B00E3638E /* MissionSelector.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				BAD90CC41A9C06860074AF3B /* DiceManager.m in Sources */,
 			);

@@ -13,6 +13,8 @@
     CCButton *_playButton;
     CCSprite *_spriteThree;
     CCLabelTTF *_highScoreLabel;
+    CCLabelTTF *_currentScoreLabel;
+    CCButton *_missionButton;
 }
 
 -(void) didLoadFromCCB {
@@ -20,7 +22,8 @@
     //_playButton.visible = TRUE;
     //[_spriteThree setSpriteFrame:[CCSpriteFrame frameWithImageNamed:@"dieRed3_less.png"]];
     DiceManager *dice = [DiceManager sharedDice];
-    [_highScoreLabel setString:[NSString stringWithFormat:@"HighScore: %d",[dice GetHighScore]]];
+    [_highScoreLabel setString:[NSString stringWithFormat:@"%d",[dice GetHighScore]]];
+    [_currentScoreLabel setString:[NSString stringWithFormat:@"%d",[dice GetCurrentScore]]];
     
 }
 
@@ -29,6 +32,13 @@
     CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionUp duration:0.2];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
     //NSLog(@"PLay button clicked");
+}
+
+-(void) mission {
+    NSLog(@"mission");
+    CCScene *scene = [CCBReader loadAsScene:@"MissionSelector"];
+    CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionUp duration:0.2];
+    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 }
 
 @end

@@ -9,9 +9,11 @@
 #import "DiceManager.h"
 
 #define kHighScoreKeyName @"HighScoreKey"
+#define kCurrentScoreKeyName @"CurrentScoreKey"
 
 @implementation DiceManager {
     int _highScore;
+    int _currentScore;
 }
 
 @synthesize dice1State;
@@ -48,6 +50,9 @@
     return _highScore;
 }
 
+-(int) GetCurrentScore{
+    return _currentScore;
+}
 -(void)SetHighScore:(int)Score{
     if(Score > _highScore) {
         _highScore = Score;
@@ -57,12 +62,21 @@
     }
 }
 
+-(void)SetCurrentScore:(int)Score{
+    _currentScore = Score;
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:[NSNumber numberWithInt:_currentScore] forKey:kCurrentScoreKeyName];
+    [def synchronize];
+}
+
 -(void) FillSettingsOnStartup {
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    NSInteger score = [[def objectForKey:kHighScoreKeyName] integerValue];
+    NSInteger hscore = [[def objectForKey:kHighScoreKeyName] integerValue];
+    //NSInteger cscore = [[def objectForKey:kCurrentScoreKeyName] integerValue];
     
-    _highScore = score;
+    _highScore = hscore;
+    _currentScore = 0;
 }
 
 @end

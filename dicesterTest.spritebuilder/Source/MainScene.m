@@ -20,7 +20,14 @@
     int setRestart;
     CCButton *_restartButton;
     NSMutableArray *_offScreenTile;
-    CCSprite *apTest;
+    CCSprite *Red1;
+    CCSprite *Red2;
+    CCSprite *Red3;
+    CCSprite *Red4;
+    CCSprite *Red5;
+    CCSprite *Red6;
+    NSMutableArray *statusTracker;
+    DiceManager *myDice;
 }
 
 -(void) didLoadFromCCB {
@@ -48,11 +55,47 @@
     randomBlink.scale = 0.75;
     
     [self addChild:randomBlink];*/
-    apTest = [CCSprite spriteWithImageNamed:@"diceAsset/dieRed1.png"];
-    apTest.anchorPoint = ccp(0,0);
-    apTest.position = ccp(0,0);
-    apTest.opacity = 0.5;
-    [self addChild:apTest];
+    Red1 = [CCSprite spriteWithImageNamed:@"diceAsset/dieRed1.png"];
+    Red1.positionType = CCPositionTypeMake(CCPositionUnitNormalized, CCPositionUnitNormalized, CCPositionReferenceCornerTopRight);
+    Red1.position = ccp(0.122,0.361);
+    Red1.scale = 0.5;
+    Red1.opacity = 1.0;
+    [self addChild:Red1];
+    
+    Red2 = [CCSprite spriteWithImageNamed:@"diceAsset/dieRed2.png"];
+    Red2.positionType = CCPositionTypeMake(CCPositionUnitNormalized, CCPositionUnitNormalized, CCPositionReferenceCornerTopRight);
+    Red2.position = ccp(0.122,0.46);
+    Red2.scale = 0.5;
+    Red2.opacity = 0.3;
+    [self addChild:Red2];
+    
+    Red3 = [CCSprite spriteWithImageNamed:@"diceAsset/dieRed3.png"];
+    Red3.positionType = CCPositionTypeMake(CCPositionUnitNormalized, CCPositionUnitNormalized, CCPositionReferenceCornerTopRight);
+    Red3.position = ccp(0.122,0.554);
+    Red3.scale = 0.5;
+    Red3.opacity = 0.3;
+    [self addChild:Red3];
+    
+    Red4 = [CCSprite spriteWithImageNamed:@"diceAsset/dieRed4.png"];
+    Red4.positionType = CCPositionTypeMake(CCPositionUnitNormalized, CCPositionUnitNormalized, CCPositionReferenceCornerTopRight);
+    Red4.position = ccp(0.122,0.648);
+    Red4.scale = 0.5;
+    Red4.opacity = 0.3;
+    [self addChild:Red4];
+    
+    Red5 = [CCSprite spriteWithImageNamed:@"diceAsset/dieRed5.png"];
+    Red5.positionType = CCPositionTypeMake(CCPositionUnitNormalized, CCPositionUnitNormalized, CCPositionReferenceCornerTopRight);
+    Red5.position = ccp(0.122,0.744);
+    Red5.scale = 0.5;
+    Red5.opacity = 0.3;
+    [self addChild:Red5];
+    
+    Red6 = [CCSprite spriteWithImageNamed:@"diceAsset/dieRed6.png"];
+    Red6.positionType = CCPositionTypeMake(CCPositionUnitNormalized, CCPositionUnitNormalized, CCPositionReferenceCornerTopRight);
+    Red6.position = ccp(0.122,0.846);
+    Red6.scale = 0.5;
+    Red6.opacity = 0.3;
+    [self addChild:Red6];
     
     _offScreenTile = nil;
     
@@ -82,8 +125,14 @@
         [_tiles removeAllObjects];
         [self unschedule:@selector(step)];
         _restartButton.visible = TRUE;
+        [myDice SetCurrentScore:score];
+        [myDice SetHighScore:score];
+        
+        //CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
+        //[[CCDirector sharedDirector] replaceScene:scene];
         CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
-        [[CCDirector sharedDirector] replaceScene:scene];
+        CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];
+        [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 
     }
     else{
@@ -120,7 +169,7 @@
 //    }
 
     
-    DiceManager *myDice = [DiceManager sharedDice];
+    myDice = [DiceManager sharedDice];
     
     if (setRestart == 0) {
         for (int i=0; i<6; i++) {
@@ -129,8 +178,23 @@
                 if ([[gameQueue objectAtIndex:0] isEqual:[NSNumber numberWithInt:i]]) {
                     NSLog(@"correct dice face");
                     if (i == 0) {
-                        apTest.opacity = 1;
+                        Red2.opacity = 1;
                     }
+                    if (i == 1) {
+                        Red3.opacity = 1;
+                    }
+                    if (i == 2) {
+                        Red4.opacity = 1;
+                    }
+                    if (i == 3) {
+                        Red5.opacity = 1;
+                    }
+                    if (i == 4) {
+                        Red6.opacity = 1;
+                    }
+                    /*if (i == 5) {
+                        Red6.opacity = 1;
+                    }*/
     //                NSNumber* temp = [NSNumber numberWithInt:i];
                     [gameQueue removeObjectAtIndex:0];
                     NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:0]);
@@ -139,11 +203,18 @@
                     if (i == 5) {
                         score++;
                         _scoreLabel.string = [NSString stringWithFormat:@"%d", score];
+                        Red1.opacity = 0.3;
+                        Red2.opacity = 0.3;
+                        Red3.opacity = 0.3;
+                        Red4.opacity = 0.3;
+                        Red5.opacity = 0.3;
+                        Red6.opacity = 0.3;
                     }
                 }else{
                     NSLog(@"INCORRECT dice face");
                     setRestart = 1;
                     _restartButton.visible = TRUE;
+                    [myDice SetCurrentScore:score];
                     [myDice SetHighScore:score];
                     CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
                     CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];

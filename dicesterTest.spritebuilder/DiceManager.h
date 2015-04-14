@@ -32,4 +32,7 @@
 -(void) SetHighScore:(int) Score;
 -(void) FillSettingsOnStartup;
 
+-(int) GetCurrentScore;
+-(void) SetCurrentScore:(int) Score;
+
 @end
