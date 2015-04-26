@@ -28,6 +28,9 @@
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 #import "DiceManager.h"
+#import "Mixpanel.h"
+
+#define MIXPANEL_TOKEN @"17e56f5442848553c2433e289a8b7904"
 
 @implementation AppController
 
@@ -61,7 +64,9 @@
 - (CCScene*) startScene
 {
     [[DiceManager sharedDice] FillSettingsOnStartup];
-    return [CCBReader loadAsScene:@"MenuScreen"];
+    //[Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+
+    return [CCBReader loadAsScene:@"NewMenu"];
 }
 
 @end

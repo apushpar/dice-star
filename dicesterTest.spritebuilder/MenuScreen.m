@@ -15,6 +15,8 @@
     CCLabelTTF *_highScoreLabel;
     CCLabelTTF *_currentScoreLabel;
     CCButton *_missionButton;
+    CCButton *_infoButton;
+    CCButton* _backButton;
 }
 
 -(void) didLoadFromCCB {
@@ -38,6 +40,20 @@
     NSLog(@"mission");
     CCScene *scene = [CCBReader loadAsScene:@"MissionSelector"];
     CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionUp duration:0.2];
+    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
+}
+
+-(void) info {
+    NSLog(@"info");
+    CCScene *scene = [CCBReader loadAsScene:@"CreditsScene"];
+    CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionUp duration:0.2];
+    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
+}
+
+-(void) back {
+    NSLog(@"back");
+    CCScene *scene = [CCBReader loadAsScene:@"CreditsScene"];
+    CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionRight duration:0.2];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 }
 

@@ -177,7 +177,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>diceAsset/dieRed4.png</string>
+							<string>diceAsset/dieWhite4.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -364,6 +364,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -503,7 +505,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>diceAsset/dieRed1.png</string>
+							<string>diceAsset/dieWhite1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1155,7 +1157,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>diceAsset/dieRed5.png</string>
+							<string>diceAsset/dieWhite5.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1481,7 +1483,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>diceAsset/dieRed3.png</string>
+							<string>diceAsset/dieWhite3.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1740,8 +1742,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

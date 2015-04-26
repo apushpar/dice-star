@@ -28,6 +28,7 @@
     CCSprite *Red6;
     NSMutableArray *statusTracker;
     DiceManager *myDice;
+    CCNodeColor* _barColor;
 }
 
 -(void) didLoadFromCCB {
@@ -38,7 +39,20 @@
     manageDelta = 100;
     score = 0;
     int setRestart = 0;
+    
+    int random_num = arc4random_uniform(3);
+    if (random_num == 0) {
+        _barColor.color = [CCColor lightGrayColor];
+    }else if (random_num == 1){
+        _barColor.color = [CCColor whiteColor];
+    }else if (random_num == 2) {
+        _barColor.color = [CCColor grayColor];
+    }
+    
+    _barColor.visible = true;
+    
     gameQueue = [[NSMutableArray alloc] initWithObjects:@0,@1,@2,@3,@4,@5, nil];
+    //gameQueue = [[NSMutableArray alloc] initWithObjects:@0,@1,@2, nil];
     NSUInteger count = [gameQueue count];
     /*for (NSUInteger i = 0; i < count; ++i) {
         int nElements = count - i;
@@ -120,7 +134,7 @@
 - (void)step
 {
     
-    if (timerValue == 0) {
+    /*if (timerValue == 0) {
         NSLog(@"30 seconds");
         [_tiles removeAllObjects];
         [self unschedule:@selector(step)];
@@ -130,7 +144,7 @@
         
         //CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
         //[[CCDirector sharedDirector] replaceScene:scene];
-        CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
+        CCScene *scene = [CCBReader loadAsScene:@"NewMenu"];
         CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];
         [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 
@@ -138,7 +152,7 @@
     else{
         timerValue--;
         _timeLabel.string = [NSString stringWithFormat:@"%d", timerValue];
-    }
+    }*/
     
     if (timerValue % 5 == 0){
         manageDelta += 10;
@@ -172,25 +186,30 @@
     myDice = [DiceManager sharedDice];
     
     if (setRestart == 0) {
-        for (int i=0; i<6; i++) {
+        for (int i=0; i<[gameQueue count]; i++) {
             if ([[myDice.diceArray objectAtIndex:i] isEqual:[NSNumber numberWithInt:1]]) {
                 NSLog(@"dice %d is set", i+1);
                 if ([[gameQueue objectAtIndex:0] isEqual:[NSNumber numberWithInt:i]]) {
                     NSLog(@"correct dice face");
                     if (i == 0) {
                         Red2.opacity = 1;
+                        Red1.scale = 0.7;
                     }
                     if (i == 1) {
                         Red3.opacity = 1;
+                        Red2.scale = 0.7;
                     }
                     if (i == 2) {
                         Red4.opacity = 1;
+                        Red3.scale = 0.7;
                     }
                     if (i == 3) {
                         Red5.opacity = 1;
+                        Red4.scale = 0.7;
                     }
                     if (i == 4) {
                         Red6.opacity = 1;
+                        Red5.scale = 0.7;
                     }
                     /*if (i == 5) {
                         Red6.opacity = 1;
@@ -200,15 +219,37 @@
                     NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:0]);
                     [gameQueue addObject:[NSNumber numberWithInt:i]];
                     NSLog(@"peek after dequeue %@", [gameQueue objectAtIndex:[gameQueue count]-1]);
-                    if (i == 5) {
+                    if (i == ([gameQueue count] - 1)) {
                         score++;
                         _scoreLabel.string = [NSString stringWithFormat:@"%d", score];
-                        Red1.opacity = 0.3;
+                        /*if (arc4random_uniform(7) == 0) {
+                            _scoreLabel.color = [CCColor redColor];
+                        }else if (arc4random_uniform(7) == 1) {
+                            _scoreLabel.color = [CCColor greenColor];
+                        }else if (arc4random_uniform(7) == 2) {
+                            _scoreLabel.color = [CCColor orangeColor];
+                        }else if (arc4random_uniform(7) == 3) {
+                            _scoreLabel.color = [CCColor whiteColor];
+                        }else if (arc4random_uniform(7) == 4) {
+                            _scoreLabel.color = [CCColor blueColor];
+                        }else if (arc4random_uniform(7) == 5) {
+                            _scoreLabel.color = [CCColor yellowColor];
+                        }else if (arc4random_uniform(7) == 6) {
+                            _scoreLabel.color = [CCColor purpleColor];
+                        }
+                        */
+                        //Red1.opacity = 0.3;
                         Red2.opacity = 0.3;
                         Red3.opacity = 0.3;
                         Red4.opacity = 0.3;
                         Red5.opacity = 0.3;
                         Red6.opacity = 0.3;
+                        Red1.scale = 0.5;
+                        Red2.scale = 0.5;
+                        Red3.scale = 0.5;
+                        Red4.scale = 0.5;
+                        Red5.scale = 0.5;
+                        Red6.scale = 0.5;
                     }
                 }else{
                     NSLog(@"INCORRECT dice face");
@@ -216,7 +257,7 @@
                     _restartButton.visible = TRUE;
                     [myDice SetCurrentScore:score];
                     [myDice SetHighScore:score];
-                    CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
+                    CCScene *scene = [CCBReader loadAsScene:@"NewMenu"];
                     CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];
                     [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 
