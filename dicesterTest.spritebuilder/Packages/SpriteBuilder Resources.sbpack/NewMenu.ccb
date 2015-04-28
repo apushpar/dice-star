@@ -170,11 +170,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>58</real>
-							<real>54</real>
+							<real>0.18125000596046448</real>
+							<real>0.095070421695709229</real>
 							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -278,11 +278,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>136</real>
-							<real>50</real>
+							<real>0.42500001192092896</real>
+							<real>0.088028170168399811</real>
 							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -326,7 +326,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>HelveticaNeue-UltraLight</string>
+						<string>AmericanTypewriter-Light</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -485,11 +485,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>210</real>
-							<real>50</real>
+							<real>0.6875</real>
+							<real>0.088028170168399811</real>
 							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -533,7 +533,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>HelveticaNeue-Bold</string>
+						<string>AmericanTypewriter-Bold</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -2465,8 +2465,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
