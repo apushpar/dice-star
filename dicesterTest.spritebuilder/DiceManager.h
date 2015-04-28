@@ -35,4 +35,7 @@
 -(int) GetCurrentScore;
 -(void) SetCurrentScore:(int) Score;
 
+-(BOOL) GetDemoStatus;
+-(void) SetDemoStatus: (BOOL) Status;
+
 @end

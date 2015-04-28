@@ -192,6 +192,46 @@
 			<key>scaleFrom</key>
 			<integer>2</integer>
 		</dict>
+		<key>diceAsset/dieWhite1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>diceAsset/dieWhite2.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>diceAsset/dieWhite3.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>diceAsset/dieWhite4.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>diceAsset/dieWhite5.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>diceAsset/dieWhite6.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>diceAsset/down.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>diceAsset/down_big.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>diceAsset/left_margin.png</key>
 		<dict/>
 		<key>diceAsset/left_margin_fix.png</key>

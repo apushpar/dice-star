@@ -10,10 +10,12 @@
 
 #define kHighScoreKeyName @"HighScoreKey"
 #define kCurrentScoreKeyName @"CurrentScoreKey"
+#define kDemoStatusKeyName @"DemoStatus"
 
 @implementation DiceManager {
     int _highScore;
     int _currentScore;
+    BOOL _demoStatus;
 }
 
 @synthesize dice1State;
@@ -53,6 +55,7 @@
 -(int) GetCurrentScore{
     return _currentScore;
 }
+
 -(void)SetHighScore:(int)Score{
     if(Score > _highScore) {
         _highScore = Score;
@@ -69,12 +72,23 @@
     [def synchronize];
 }
 
+-(BOOL) GetDemoStatus {
+    return _demoStatus;
+}
+
+-(void) SetDemoStatus:(BOOL)Status {
+    _demoStatus = Status;
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:[NSNumber numberWithBool:_demoStatus] forKey:kDemoStatusKeyName];
+    [def synchronize];
+}
+
 -(void) FillSettingsOnStartup {
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
     NSInteger hscore = [[def objectForKey:kHighScoreKeyName] integerValue];
     //NSInteger cscore = [[def objectForKey:kCurrentScoreKeyName] integerValue];
-    
+    _demoStatus = false;
     _highScore = hscore;
     _currentScore = 0;
 }

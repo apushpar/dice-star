@@ -29,6 +29,21 @@
     NSMutableArray *statusTracker;
     DiceManager *myDice;
     CCNodeColor* _barColor;
+    CCNodeColor* _demoScreen;
+    CCButton* _gotItButton;
+    CCLabelTTF* _ax;
+    CCLabelTTF* _a1;
+    CCLabelTTF* _a2;
+    CCLabelTTF* _a3;
+    CCLabelTTF* _a4;
+    CCLabelTTF* _a5;
+    CCLabelTTF* _a6;
+    CCSprite* _s1;
+    CCSprite* _s2;
+    CCSprite* _s3;
+    CCSprite* _s4;
+    CCSprite* _s5;
+    CCSprite* _s6;
 }
 
 -(void) didLoadFromCCB {
@@ -39,6 +54,11 @@
     manageDelta = 100;
     score = 0;
     int setRestart = 0;
+    myDice = [DiceManager sharedDice];
+    
+    if ([myDice GetDemoStatus]) {
+        [self clearDemoScreen];
+    }
     
     int random_num = arc4random_uniform(3);
     if (random_num == 0) {
@@ -124,7 +144,7 @@
             randomTile = [CCBReader load:@"Rand2"];
         }
         
-        randomTile.position = ccp(0, (i+2)*240);
+        randomTile.position = ccp(0, (i+2.5)*240);
         [self addChild:randomTile];
         [_tiles addObject:randomTile];
         [self schedule:@selector(step) interval:1.0f];
@@ -154,8 +174,8 @@
         _timeLabel.string = [NSString stringWithFormat:@"%d", timerValue];
     }*/
     
-    if (timerValue % 5 == 0){
-        manageDelta += 10;
+    if ([myDice GetDemoStatus]){
+        manageDelta += 2;
     }
     
     if (setRestart == 1) {
@@ -167,13 +187,17 @@
 
 -(void)update:(CCTime)delta{
     
-    for (CCNode *tile in _tiles) {
     
-        tile.position = ccp(tile.position.x, tile.position.y - (manageDelta*delta));
-        if (tile.position.y < -240) {
-                tile.position = ccp(tile.position.x, 4560);
+    
+    if ([myDice GetDemoStatus]) {
+        
+        for (CCNode *tile in _tiles) {
+        
+            tile.position = ccp(tile.position.x, tile.position.y - (manageDelta*delta));
+            if (tile.position.y < -240) {
+                    tile.position = ccp(tile.position.x, 4560);
+            }
         }
-        //NSLog(@"x value: %f",tile.position.y);
     }
     
 //    for (CCNode *toRemoveTile in _offScreenTile) {
@@ -183,7 +207,7 @@
 //    }
 
     
-    myDice = [DiceManager sharedDice];
+    
     
     if (setRestart == 0) {
         for (int i=0; i<[gameQueue count]; i++) {
@@ -268,9 +292,33 @@
     }
 }
 
+-(void) clearDemoScreen {
+    _demoScreen.visible = false;
+    _ax.visible = false;
+    _gotItButton.visible = false;
+    _a1.visible = false;
+    _a2.visible = false;
+    _a3.visible = false;
+    _a4.visible = false;
+    _a5.visible = false;
+    _a6.visible = false;
+    _s1.visible = false;
+    _s2.visible = false;
+    _s3.visible = false;
+    _s4.visible = false;
+    _s5.visible = false;
+    _s6.visible = false;
+
+}
+
 - (void)restart {
     CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+- (void)Gotit {
+    [myDice SetDemoStatus:true];
+    [self clearDemoScreen];
 }
 
 @end

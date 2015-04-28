@@ -18,7 +18,7 @@
 
 -(void) exit {
     //CCLOG(@"Akshay");
-    CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
+    CCScene *scene = [CCBReader loadAsScene:@"NewMenu"];
     CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionDown duration:0.2];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
 }
