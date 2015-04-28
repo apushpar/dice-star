@@ -44,7 +44,7 @@ CCNodeColor* _barColor;
     _restartButton.visible = FALSE;
     _tiles = [[NSMutableArray alloc] init];
     timerValue = 60;
-    manageDelta = 200;
+    manageDelta = 250;
     score = 0;
     int setRestart = 0;
     myDice = [DiceManager sharedDice];

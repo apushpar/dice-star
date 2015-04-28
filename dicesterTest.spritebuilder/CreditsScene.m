@@ -35,11 +35,11 @@
 }
 
 
--(void) other {
-    NSLog(@"credit scene other design");
-    CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
-    CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionLeft duration:0.2];
-    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
-}
+//-(void) other {
+//    NSLog(@"credit scene other design");
+//    CCScene *scene = [CCBReader loadAsScene:@"MenuScreen"];
+//    CCTransition *crossFade = [CCTransition transitionMoveInWithDirection:CCTransitionDirectionLeft duration:0.2];
+//    [[CCDirector sharedDirector] replaceScene:scene withTransition:crossFade];
+//}
 
 @end

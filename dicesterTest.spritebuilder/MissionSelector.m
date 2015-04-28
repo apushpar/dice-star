@@ -18,6 +18,9 @@
     CCLabelTTF* _oddBallLocked;
     CCLabelTTF* _primeConcernLocked;
     DiceManager* myDice;
+    CCNode* _oddBallLock;
+    CCNode* _getEvenLock;
+    CCNode* _primeConcernLock;
 }
 
 -(void) didLoadFromCCB {
@@ -28,19 +31,25 @@
     _getEvenLocked.visible = true;
     _oddBallLocked.visible = true;
     _primeConcernLocked.visible = true;
+    _oddBallLock.visible = true;
+    _getEvenLock.visible = true;
+    _primeConcernLock.visible = true;
     myDice = [DiceManager sharedDice];
     
     if ([myDice GetHighScore] > 5) {
         _oddBallGameButton.visible = true;
         _oddBallLocked.visible = false;
+        _oddBallLock.visible = false;
     }
     if ([myDice GetHighScore] > 10) {
         _getEvenGameButton.visible = true;
         _getEvenLocked.visible = false;
+        _getEvenLock.visible = false;
     }
     if ([myDice GetHighScore] > 15) {
         _primeConcernGameButton.visible = true;
         _primeConcernLocked.visible = false;
+        _primeConcernLock.visible = false;
     }
 }
 
