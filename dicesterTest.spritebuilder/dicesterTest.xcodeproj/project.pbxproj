@@ -92,6 +92,9 @@
 		BA17D07D1AE99955000B92DB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA17D07C1AE99955000B92DB /* Default-568h@2x.png */; };
 		BA17D0801AE9B68A000B92DB /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BA17D07F1AE9B68A000B92DB /* CreditsScene.m */; };
 		BA35F9DD1AEAA9200076137C /* NewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BA35F9DC1AEAA9200076137C /* NewMenu.m */; };
+		BA3A17D11AEF3634002D4DFE /* GetEven.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3A17D01AEF3634002D4DFE /* GetEven.m */; };
+		BA3A17D51AEF45C6002D4DFE /* OddBall.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3A17D41AEF45C6002D4DFE /* OddBall.m */; };
+		BA3A17D81AEF4A2F002D4DFE /* PrimeConcern.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3A17D71AEF4A2F002D4DFE /* PrimeConcern.m */; };
 		BA5AF1371A96C929006692D9 /* Parent.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF1361A96C929006692D9 /* Parent.m */; };
 		BA5AF13A1A96C96C006692D9 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF1391A96C96C006692D9 /* Dice.m */; };
 		BA5AF13D1A96C9FC006692D9 /* Rand.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AF13C1A96C9FC006692D9 /* Rand.m */; };
@@ -246,6 +249,12 @@
 		BA17D07F1AE9B68A000B92DB /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsScene.m; sourceTree = "<group>"; };
 		BA35F9DB1AEAA9200076137C /* NewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMenu.h; sourceTree = "<group>"; };
 		BA35F9DC1AEAA9200076137C /* NewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMenu.m; sourceTree = "<group>"; };
+		BA3A17CF1AEF3634002D4DFE /* GetEven.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetEven.h; sourceTree = "<group>"; };
+		BA3A17D01AEF3634002D4DFE /* GetEven.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetEven.m; sourceTree = "<group>"; };
+		BA3A17D31AEF45C6002D4DFE /* OddBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OddBall.h; sourceTree = "<group>"; };
+		BA3A17D41AEF45C6002D4DFE /* OddBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OddBall.m; sourceTree = "<group>"; };
+		BA3A17D61AEF4A2F002D4DFE /* PrimeConcern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimeConcern.h; sourceTree = "<group>"; };
+		BA3A17D71AEF4A2F002D4DFE /* PrimeConcern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimeConcern.m; sourceTree = "<group>"; };
 		BA5AF1351A96C929006692D9 /* Parent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parent.h; sourceTree = "<group>"; };
 		BA5AF1361A96C929006692D9 /* Parent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parent.m; sourceTree = "<group>"; };
 		BA5AF1381A96C96C006692D9 /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
@@ -520,6 +529,8 @@
 				BAA423231ABD0203004724CD /* MenuScreen.h */,
 				BABF10C81ADDBD1B00E3638E /* MissionSelector.h */,
 				BABF10C91ADDBD1B00E3638E /* MissionSelector.m */,
+				BA3A17D61AEF4A2F002D4DFE /* PrimeConcern.h */,
+				BA3A17D71AEF4A2F002D4DFE /* PrimeConcern.m */,
 				BAA423241ABD0203004724CD /* MenuScreen.m */,
 				B7378993180767190076A88C /* MainScene.m */,
 				BA17D07E1AE9B68A000B92DB /* CreditsScene.h */,
@@ -533,6 +544,10 @@
 				BA5E34751A983DC700C6B035 /* Rand1.h */,
 				BA5E34761A983DC700C6B035 /* Rand1.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
+				BA3A17CF1AEF3634002D4DFE /* GetEven.h */,
+				BA3A17D01AEF3634002D4DFE /* GetEven.m */,
+				BA3A17D31AEF45C6002D4DFE /* OddBall.h */,
+				BA3A17D41AEF45C6002D4DFE /* OddBall.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -966,7 +981,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAA423251ABD0203004724CD /* MenuScreen.m in Sources */,
+				BA3A17D51AEF45C6002D4DFE /* OddBall.m in Sources */,
+				BA3A17D81AEF4A2F002D4DFE /* PrimeConcern.m in Sources */,
 				BA5AF13A1A96C96C006692D9 /* Dice.m in Sources */,
+				BA3A17D11AEF3634002D4DFE /* GetEven.m in Sources */,
 				BA5E347B1A983E7C00C6B035 /* Rand2.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				BA5AF1371A96C929006692D9 /* Parent.m in Sources */,

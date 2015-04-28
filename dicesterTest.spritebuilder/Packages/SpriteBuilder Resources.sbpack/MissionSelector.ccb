@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>CCButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_oddBallGameButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -109,7 +109,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string></string>
+							<string>OddBallGame</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -1115,7 +1115,7 @@
 				<key>displayName</key>
 				<string>CCButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_getEvenGameButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -1173,7 +1173,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string></string>
+							<string>GetEvenGame</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -1855,7 +1855,7 @@
 				<key>displayName</key>
 				<string>CCButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_primeConcernGameButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -1875,7 +1875,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>148.09599304199219</real>
+							<real>140.09599304199219</real>
 							<real>20.271999359130859</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1913,7 +1913,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string></string>
+							<string>PrimeConcernGame</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -2168,6 +2168,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
